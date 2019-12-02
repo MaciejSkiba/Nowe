@@ -1,28 +1,32 @@
 <template>
   <div>
-    <h1>Clicked {{ count }} times.</h1>
-    <button @click="increase()">More</button>
-    <button @click="resetcounter()">Reset</button>
+    <div>
+      <h1>Participants list</h1>
+      <h3>New participant</h3>
+      <form @submit.prevent="addNewParticipant()">
+        <label>Firstname </label>
+        <input type="text">
+        <label>Lastname </label>
+        <input type="text">
+        <button>Add new participant</button>
+      </form>
+      <ol v-if="numbers.length > 0">
+        <li: key="number" v-for="number in numbers">{{Firstname}{Lastname}}
+      </ol>
+    </div>
   </div>
+
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-            title: 'Not clicked yet',
-            count:0
-            }
+  export default {
+    data() {
+      return {numbers:[]};
+    },
+    methods: {
+      addNewParticipant() {
 
-        },
-        methods: {
-            increase() {
-                this.count = this.count+1;
-
-            },
-            resetcounter(){
-            this.count=0;
-            }
-        }
-    };
+      }
+    }
+  };
 </script>
