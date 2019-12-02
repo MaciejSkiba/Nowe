@@ -1,20 +1,28 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
-    <button @click="iAmClicked()">Click me!</button>
+    <h1>Clicked {{ count }} times.</h1>
+    <button @click="increase()">More</button>
+    <button @click="resetcounter()">Reset</button>
   </div>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {title: 'Clicked 0 times'}
-    },
-    methods: {
-      iAmClicked() {
-        this.title= 'Clicked';
-      }
+    export default {
+        data() {
+            return {
+            title: 'Not clicked yet',
+            count:0
+            }
 
-    }
-  };
+        },
+        methods: {
+            increase() {
+                this.count = this.count+1;
+
+            },
+            resetcounter(){
+            this.count=0;
+            }
+        }
+    };
 </script>
