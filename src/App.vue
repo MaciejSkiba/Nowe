@@ -2,9 +2,7 @@
   <div>
     <div>
       <h1>Participants list</h1>
-      <ol  v-if="people.length > 0">
-        <li :key="person" v-for="person in people">{{person}}</li>
-      </ol>
+      <Participants-list :list="people"></Participants-list>
     </div>
 
     <h3>New participant</h3>
@@ -19,12 +17,12 @@
 </template>
 
 <script>
+import ParticipantsList from "./ParticipantsList.vue";
   export default {
+    components: {ParticipantsList},
     data() {
       return {
-        people: [
-          "Ktoś Tam"
-        ],
+        people: [],
         Firstname:"",
         Lastname:""
       };
